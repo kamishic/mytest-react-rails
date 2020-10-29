@@ -9,4 +9,5 @@ class TweetsController < ApplicationController
     @tweet = Tweet.create(tweet: params[:tweet])
     render json: @tweet
   end
+
 end

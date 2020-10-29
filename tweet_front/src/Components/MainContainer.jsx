@@ -34,7 +34,6 @@ class MainContainer extends Component{
       const newData = update(this.state.tweets, {$push:[response.data]})
       this.setState({tweets: newData})
     })
-
     .catch((data) =>{
       console.log(data)
     })
@@ -49,16 +48,16 @@ class MainContainer extends Component{
     return (
       <div className="app-main">
         <form>
-        <FormGroup controlId="formBasicText">
-          <FormControl
-            type="text"
-            value={this.state.tweet}
-            placeholder="Enter text"
-            onChange={ e => this.onChangetext(e)}
-          />
-        </FormGroup>
-      </form>
-      <Button type="submit" onClick={this.hundleSubmit}>つぶやく</Button>
+          <FormGroup controlId="formBasicText">
+            <FormControl
+              type="text"
+              value={this.state.tweet}
+              placeholder="Enter text"
+              onChange={ e => this.onChangetext(e)}
+            />
+          </FormGroup>
+        </form>
+        <Button type="submit" onClick={this.hundleSubmit}>つぶやく</Button>
         
         <ul>
           {this.state.tweets.map((data) => {
